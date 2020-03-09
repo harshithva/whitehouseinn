@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend\Admin;
 
 use App\Model\Gateway;
 use App\Model\Payment;
+use App\Expense;
 use Illuminate\Http\Request;
 use Image;
 use App\Http\Controllers\Controller;
@@ -29,6 +30,8 @@ class GatewayController extends Controller
                 $items =$items->where('is_offline',1);
             }
         }
+        
+       
 
         $items = $items->get();
         return view('backend.admin.payment.gateway', compact('items'));
@@ -95,7 +98,7 @@ class GatewayController extends Controller
         session()->flash('success', 'Gateway Updated');
         return back();
     }
-
+    
     public function paymentLog($id=null){
         $logs = Payment::whereStatus(1);
         $gateway = null;
@@ -105,8 +108,18 @@ class GatewayController extends Controller
 
         }
 
+        $sum = Payment::whereStatus(1)->sum('amount');
+         $expense = 0;
+         $expense = Expense::sum('amount');
+        
+        
+        // foreach($logs as $log)
+        // {
+        // $sum += $log->amount;
+        // }
+
            $logs=$logs->latest()->paginate(20);
-        return view('backend.admin.payment.payment_log', compact('logs','gateway'));
+        return view('backend.admin.payment.payment_log', compact('logs','gateway','sum','expense'));
     }
 
 

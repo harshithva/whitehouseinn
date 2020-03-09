@@ -8,7 +8,7 @@
       <!-- Bootstrap CSS -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
       <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-      <title>THESOFTKING  INSTALLER</title>
+      <title>DHOTEL INSTALLER BY VAWEBSITES</title>
       <style type="text/css">
         body{
           background-color: #292929;
@@ -16,7 +16,7 @@
         }
         /*Section Header */
         .section-header{
-          background-color: #2ecc71;
+          background-color: #f1c40f;
           color: #fff;
           padding: 20px 20px;
           overflow: hidden;
@@ -35,7 +35,7 @@
           font-size: 24px;
           padding: 5px 25px;
           background-color: #fff;
-          color: #2ecc71;
+          color: #f1c40f;
           border-radius: 5px;
           text-align: center;
           text-decoration: none;
@@ -60,7 +60,7 @@
           -moz-border-radius: 10px;
           border-radius: 10px; 
           text-align: center;
-          border:2px solid #2ecc71;
+          border:2px solid #f1c40f;
           padding: 20px 20px;
         }
         /*Second Installer*/
@@ -91,7 +91,7 @@
           font-size: 20px;
           text-transform: capitalize;
           text-decoration: none;
-          background-color:#2ecc71;
+          background-color:#f1c40f;
           border:none; 
         }
          .first-installer .form-check label{
@@ -103,7 +103,7 @@
         }
         /*Third Installer*/
         .third-installer .installer-content form button{
-          background-color: #2ecc71;
+          background-color: #f1c40f;
           outline: none;
           border:none;
           font-size: 25px;
@@ -118,7 +118,7 @@
           background-color: #292929;
         }
         .installer-header {
-          border-bottom: 1px solid #2ecc71;
+          border-bottom: 1px solid #f1c40f;
           margin-bottom: 24px;
         }
 
@@ -128,7 +128,7 @@
       <header>
           <div class="section-header">
             <p>software setup wizard</p>
-            <a href="http://portal.thesoftking.com/submitticket.php?step=2&deptid=4" target="_blank">Get Support</a>
+            <a href="https://vawebsites.in" target="_blank">Get Support</a>
           </div>
       </header>
       <!-- First Section Start -->
@@ -298,7 +298,7 @@ $status->status = 'Success';
   <h4>APP URL</h4>
   <input class="form-control" name="app_url" value="<?php echo $base_url; ?>" type="text"><br>
   <hr style="background: #777; height: 1px;">
-<center><a href="https://doniaweb.com" target="_blank">DoniaWeB Scripts</a></center>
+<center><a href="https://vawebsites.in" target="_blank">VAwebsites</a></center>
   <hr style="background: #777; height: 1px;">
   <h4 style="text-transform: uppercase;">Database Details</h4>
   <input class="form-control input-lg" name="db_name" placeholder="Database Name" type="text" required=""><br>
@@ -391,7 +391,6 @@ $status->status = 'Success';
   <i class="fa fa-times" style="color:red;"></i>  Include this product into other products sold on Envato market and its affiliate websites.<br>
   <i class="fa fa-times" style="color:red;"></i>  Use on more than one (1) domain.<br>
   <br><br> 
-  For more information, Please Check <a href="https://codecanyon.net/licenses/faq" target="_blank">Envato License FAQ </a>.
   </p>
   <div class="button">
   <a class="btn btn-primary anchor" href="?action=requirements">I Agree. Next Step <i class="fa fa-angle-double-right"></i></a>

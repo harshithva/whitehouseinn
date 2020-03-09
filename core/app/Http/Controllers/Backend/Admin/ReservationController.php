@@ -22,6 +22,7 @@ use App\Http\Controllers\Controller;
 use DB;
 use Illuminate\Validation\ValidationException;
 
+
 class ReservationController extends Controller
 {
     /**
@@ -130,6 +131,7 @@ class ReservationController extends Controller
         });
         $guests = $this->guests->where('status',1)->get();
         $room_types = $this->roomType->whereStatus(1)->get();
+        
         return view('backend.admin.reservation.create',compact('guests','room_types','tax'));
     }
     public function store(Request $request){
@@ -138,7 +140,7 @@ class ReservationController extends Controller
             'room_type'=>'required|integer',
             'adults'=>'required|integer|min:1',
             'kids'=>'required|integer|min:0',
-            'check_in'=>'required|date|after_or_equal:toady',
+            'check_in'=>'required|date|after_or_equal:today',
             'check_out'=>'required|date|after_or_equal:check_in',
             'night_list'=>'required',
             'number_of_room'=>'required'
@@ -156,6 +158,7 @@ class ReservationController extends Controller
             $reservation->check_out = $request->check_out;
             $reservation->number_of_room = $request->number_of_room;
             $reservation->status = 'SUCCESS';
+            $reservation->date = now();
             $reservation->save();
 
             foreach ($request->night_list as $v){
@@ -269,7 +272,7 @@ class ReservationController extends Controller
     }
     public function changeStatus ($id,$status){
         $reservation = $this->reservation->findOrFail($id);
-        if(!in_array($status,['pending','success','cancel']))
+        if(!in_array($status,['pending','success','cancel','checkout']))
             abort(401);
         $reservation->status = strtoupper($status);
         $reservation->save();
@@ -377,7 +380,16 @@ class ReservationController extends Controller
                     break;
                 }
             }
-            $total_price +=$price*$r;
+            
+            
+            
+          
+
+        $total_night = (count($night_calculation)*1) - 1;
+        
+        $p =  $price;
+     
+       $total_price +=$price*$r;
             $data[] = [
                 'date'=>$k,
                 'check_in'=>$v['start'],
@@ -386,12 +398,12 @@ class ReservationController extends Controller
                 'room_option'=>$room_option,
                 'room'=>$selected_room,
                 'room_qty'=>$r,
-                'total_price'=>$total_price
+                'total_price'=>$p
             ];
 
         }
-
-        $total_night =count($night_calculation);
+        
+        array_pop($data);
 
 
         return response()->json([
@@ -400,7 +412,7 @@ class ReservationController extends Controller
             'data'=>[
                 'night_list'=>$data,
                 'total_night'=>$total_night,
-                'total_price'=>$total_price,
+                'total_price'=>$p,
             ]
         ]);
     }

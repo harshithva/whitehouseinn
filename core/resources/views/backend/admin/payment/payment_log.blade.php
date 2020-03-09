@@ -11,7 +11,38 @@
                             @endif
                     </h5>
                 </div>
+        
+                <div class="row">
+                    <div class="col-sm-6">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Income</h5>
+                     
+                          <a href="#" class="btn btn-primary">
+                             <h6>₹ {{$sum}}</h6> 
+                    </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Expense</h5>
+                        
+                          <a href="#" class="btn btn-secondary">
+                          ₹ {{ $expense }}
+                          </a>
+                         
+                              <a href="/expenses/create" class="ml-2">Add Expense</a>
+                              <a href="/expenses" class="ml-2">View Expense</a>
+                        
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 <div class="card-body p-0">
+            
 
                     <table class="table table-sm table-striped  table-hover order-column">
                         <thead>

@@ -39,6 +39,7 @@
             <li class="{{active_menu([route('backend.admin.floor'),route('backend.admin.floor.create')],'active',['backend.admin.floor.edit'])}}"> <a href="{{route('backend.admin.floor')}}"> <i class="fa fa-circle-o"></i> Floors</a></li>
             <li class="{{active_menu([route('backend.admin.amenities'),route('backend.admin.amenities.create')],'active',['backend.admin.amenities.edit'])}}"> <a href="{{route('backend.admin.amenities')}}"> <i class="fa fa-circle-o"></i> Amenities</a></li>
             <li class="{{active_menu([route('backend.admin.tax'),route('backend.admin.tax.create')],'active',['backend.admin.tax.edit'])}}"> <a href="{{route('backend.admin.tax')}}"> <i class="fa fa-circle-o"></i> Tax</a></li>
+            
         </ul>
     </li>
     @endif
@@ -47,8 +48,8 @@
             <i class="fa fa-fw fa-credit-card"></i> Payment
         </a>
         <ul id="payments" class="list-unstyled collapse {{active_menu([],'show',['admin.gateway','admin.payment_log'])}}">
-            <li class="{{active_menu([route('admin.gateway')],'active')}}"> <a href="{{route('admin.gateway')}}"> <i class="fa fa-credit-card"></i> Getaway</a></li>
-            <li class="{{active_menu([route('admin.payment_log')],'active')}}"> <a href="{{route('admin.payment_log')}}"> <i class="fa fa-file-text"></i> Payment Log</a></li>
+            <li class="{{active_menu([route('admin.gateway')],'active')}}"> <a href="{{route('admin.gateway')}}"> <i class="fa fa-credit-card"></i> Gateway</a></li>
+            <li class="{{active_menu([route('admin.payment_log')],'active')}}"> <a href="{{route('admin.payment_log')}}"> <i class="fa fa-file-text"></i>&nbsp;Reports</a></li>
         </ul>
     </li>
     @if(auth()->guard('admin')->user()->can_access('admin'))
@@ -134,6 +135,8 @@
             <li class="{{active_menu([route('admin.web_setting.section',['general','login-and-breadcrumb-img'])],'active')}}"> <a href="{{route('admin.web_setting.section',['general','login-and-breadcrumb-img'])}}"> <i class="fa fa-angle-double-right"></i> Login & Breadcrumb</a></li>
         </ul>
     </li>
+    
+   
         @endif
 
 </ul>
