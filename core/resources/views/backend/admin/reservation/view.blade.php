@@ -355,6 +355,7 @@
                                     @endif</td>
                             <td class="text-right">
                                 <a href="#" class="btn btn-sm btn-tsk" onclick="confirm('Are you sure cancel this room?')?$('#room_delete_form_{{$night->id}}').submit():false"><i class="fa fa-trash danger"></i></a>
+                                <a href="/test/manage_room/{{$reservation->id}}/edit" class="btn btn-sm bg-secondary text-white"><i class="fa fa-pencil-square-o"></i></a>
                                 <form action="{{route('backend.admin.reservation.cancel_room',$night->id)}}" method="post" id="room_delete_form_{{$night->id}}">@csrf</form>
                             </td>
                         </tr>

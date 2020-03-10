@@ -10,6 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::resource('expenses', 'ExpenseController' );
+Route::resource('/channelmanager', 'ChannelController');
+Route::resource('/manage_room', 'RoomController');
+
 Route::group(['prefix'=>'/ipn','namespace'=>'Frontend'],function () {
     //Payment IPN
     Route::get('/ipnbtc', 'HomeController@ipnBchain')->name('ipn.bchain');

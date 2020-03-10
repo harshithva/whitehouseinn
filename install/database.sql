@@ -178,15 +178,6 @@ CREATE TABLE `coupon_pivot_paid_service` (
 
 INSERT INTO `coupon_pivot_paid_service` (`id`, `coupon_id`, `paid_service_id`, `created_at`, `updated_at`) VALUES
 (1, 1, 1, NULL, NULL);
-
------------------------------------------------------------
-CREATE TABLE `expenses` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `amount` int(11) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 -- --------------------------------------------------------
 
 --

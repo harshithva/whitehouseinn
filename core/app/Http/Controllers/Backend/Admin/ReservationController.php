@@ -218,6 +218,8 @@ class ReservationController extends Controller
         $gateways = $this->gateway->whereStatus(1)->where('is_offline',1)->get();
         return view('backend.admin.reservation.view',compact('reservation','gateways','paid_services'));
     }
+
+    
     public function confirm($id){
         $reservation = $this->reservation->findOrFail($id);
         $night =  $reservation->night->groupBy('date');

@@ -136,6 +136,7 @@
         </ul>
     </li>
     
+    <li><a href="/test/channelmanager"><i class="fa fa-fw fa-user-secret"></i>Channel Manager</a></li>
    
         @endif
 
