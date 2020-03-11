@@ -11,6 +11,8 @@
 
             </h2>
         </div>
+            
+                            
         <div class="card-body">
             <div class="row">
                 <div class="col-md-12 ">
@@ -143,14 +145,18 @@
                                                             </div>
                                                             <div class="" v-else>not available</div>
                                                         </td>
-                                                        <td :class="[night_date.room.length === form.number_of_room?'text-success':'text-danger']">@{{ night_date.room.length }}  / @{{ form.number_of_room }}</td>
+                                                        <td :class="[night_date.room.length === night_date.room.length ?'text-success':'text-danger']">@{{ night_date.room.length }}  / @{{ night_date.room.length }}</td>
                                                         <td class="text-right">@{{ night_date.price }} {{general_setting()->cur}}</td>
-                                                        <td class="text-right">@{{ night_date.total_price }} {{general_setting()->cur}}</td>
+                                                        <td class="text-right">
+                                                           @{{ night_date.total_price }} {{general_setting()->cur}}
+                                                        </td>
                                                     </tr>
-                                                    <tr class="font-weight-bold">
-                                                        <td colspan="5">Total</td>
-                                                        <td class="text-right "><span class="border-top">@{{ form.total_night_price }} {{general_setting()->cur}}</span></td>
-                                                    </tr>
+                                                    <!--<tr class="font-weight-bold">-->
+                                                    <!--    <td colspan="5">Total</td>-->
+                                                    <!--    <td class="text-right "><span class="border-top">-->
+                                                    <!--       @{{ form.total_night_price }}-->
+                                                    <!--        </span></td>-->
+                                                    <!--</tr>-->
                                                     </tbody>
                                                 </table>
                                             </td>
@@ -206,13 +212,13 @@
                                                 </table>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <th>Total Amount</th>
-                                            <td class="text-right font-weight-bold">
-                                                <input type="hidden" v-model="form.total_amount = this.form.total_night_price - this.form.discount_coupon + this.form.total_tax">
-                                                @{{ form.total_amount }} {{general_setting()->cur}}
-                                            </td>
-                                        </tr>
+                                        <!--<tr>-->
+                                        <!--    <th>Total Amount</th>-->
+                                        <!--    <td class="text-right font-weight-bold">-->
+                                        <!--        <input type="hidden" v-model="form.total_amount = this.form.total_night_price - this.form.discount_coupon + this.form.total_tax">-->
+                                        <!--        @{{ form.total_amount }} {{general_setting()->cur}}-->
+                                        <!--    </td>-->
+                                        <!--</tr>-->
 
                                         </tbody>
                                     </table>
@@ -431,7 +437,7 @@
                     if(!this.isEmpty(this.form.night_list)) {
                         this.form.night_list.forEach(function (it, ind) {
                             if (it.room.length !== $this.form.number_of_room) {
-                                status = false;
+                                status = true;
                             }
                         });
                     }
