@@ -1,5 +1,5 @@
-# whitehouseinn
-# Hotel management system built for whitehouseinn.in
+# Whitehouseinn
+Hotel management system built for whitehouseinn.in
 
 ## You can checkout full working website at https://whitehouseinn.in
 
