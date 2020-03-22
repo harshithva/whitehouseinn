@@ -1,4 +1,4 @@
-## You can checkout full working website at https//whitehouseinn.in
+## You can checkout full working website at https://whitehouseinn.in
 
 ### Author
 
